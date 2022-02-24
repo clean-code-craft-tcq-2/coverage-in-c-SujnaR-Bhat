@@ -46,7 +46,7 @@ void checkAndAlert(
       {
        sendToController(breachType);
       }
-     if(alertTarget == TO_EMAIL) && (breachType != NORMAL)
+     if ((alertTarget == TO_EMAIL) && (breachType != NORMAL))
      {
       sendToEmail(breachType);
      }
