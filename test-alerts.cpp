@@ -33,32 +33,32 @@ TEST_CASE("Evaluate the breach type and send alerts")
  
   alert_target  = TO_EMAIL;
   batteryChar.coolingType = PASSIVE_COOLING;
-  checkAndAlert( alert_target, batteryChar, 40);
+  checkAndAlert( alert_target, batteryChar, 42);
   
    
   alert_target = TO_CONTROLLER;
   batteryChar.coolingType = PASSIVE_COOLING;
-  checkAndAlert( alert_target, batteryChar, -2);
+  checkAndAlert( alert_target, batteryChar, -1);
  
   
   alert_target = TO_EMAIL;
   batteryChar.coolingType = HI_ACTIVE_COOLING;
-  checkAndAlert( alert_target, batteryChar, 20);
+  checkAndAlert( alert_target, batteryChar, 22);
  
   
   alert_target = TO_CONTROLLER;
   batteryChar.coolingType = HI_ACTIVE_COOLING;
-  checkAndAlert( alert_target, batteryChar, 50);
+  checkAndAlert( alert_target, batteryChar, 52);
  
   
  alert_target = TO_EMAIL;
   batteryChar.coolingType = MED_ACTIVE_COOLING;
-  checkAndAlert( alert_target, batteryChar, -7);
+  checkAndAlert( alert_target, batteryChar, -6);
 
   
   alert_target = TO_CONTROLLER;
   batteryChar.coolingType = MED_ACTIVE_COOLING;
-  checkAndAlert( alert_target, batteryChar, 39);
+  checkAndAlert( alert_target, batteryChar, 38);
   
 }
 
