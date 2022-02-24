@@ -26,6 +26,40 @@ TEST_CASE("infers the breach according to cooling type")
 }
 
 
+TEST_CASE("Evaluate the breach type and send alerts")
+{
+  AlertTarget alert_target ;
+  BatteryCharacter batteryChar;
+ 
+  alert_target  = TO_EMAIL;
+  batteryChar.coolingType = PASSIVE_COOLING;
+  checkAndAlert( alert_target, batteryChar, 40);
+  
+   
+  alert_target = TO_CONTROLLER;
+  batteryChar.coolingType = PASSIVE_COOLING;
+  checkAndAlert( alert_target, batteryChar, -2);
+ 
+  
+  alert_target = TO_EMAIL;
+  batteryChar.coolingType = HI_ACTIVE_COOLING;
+  checkAndAlert( alert_target, batteryChar, 20);
+ 
+  
+  alert_target = TO_CONTROLLER;
+  batteryChar.coolingType = HI_ACTIVE_COOLING;
+  checkAndAlert( alert_target, batteryChar, 50);
+ 
+  
+ alert_target = TO_EMAIL;
+  batteryChar.coolingType = MED_ACTIVE_COOLING;
+  checkAndAlert( alert_target, batteryChar, -7);
 
+  
+  alert_target = TO_CONTROLLER;
+  batteryChar.coolingType = MED_ACTIVE_COOLING;
+  checkAndAlert( alert_target, batteryChar, 39);
+  
+}
 
 
