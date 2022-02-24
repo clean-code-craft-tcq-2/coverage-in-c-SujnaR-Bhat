@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 double parameterlimits[6] = {PASSIVE_COOLING_LOWER_LIMIT , PASSIVE_COOLING_UPPER_LIMIT, HIACTIVE_COOLING_LOWER_LIMIT, HIACTIVE_COOLING_UPPER_LIMIT ,
-  MEDACTIVE_COOLING_LOWER_LIMIT, MEDACTIVE_COOLING_UPPER_LIMIT}
+  MEDACTIVE_COOLING_LOWER_LIMIT, MEDACTIVE_COOLING_UPPER_LIMIT};
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   if(value < lowerLimit) {
