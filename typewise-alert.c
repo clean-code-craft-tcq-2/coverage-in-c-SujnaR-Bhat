@@ -46,7 +46,7 @@ void checkAndAlert(
       {
        sendToController(breachType);
       }
-     if(alertTarget == TO_EMAIL)
+     if(alertTarget == TO_EMAIL) && (breachType != NORMAL)
      {
       sendToEmail(breachType);
      }
@@ -72,8 +72,5 @@ void sendToEmail(BreachType breachType)
       printf("To: %s\n", recepient);
       printf("Hi, the temperature is too high\n");
     }
-    if(breachType == NORMAL)
-    {
-      /*do nothing */
-    }
+   
 }
